@@ -1,0 +1,85 @@
+Website: Expo.dev
+Create project:  npx create-expo-app@latest or npx create-expo-app "App Name"
+
+Install Versions: copy package.json and paste it in yours and press "npm install"
+
+Start App: npx expo start
+resolving issues expo go showing correct and phone not doing so or some weird glitches :npx expo prebuild
+Fixes:Unable to reach well-known versions endpoint: Solution:npm install -g expo-cli 
+
+For Styling:
+const styles = StyleSheet.create({
+
+name-of-choice:{
+  flex: 1,
+  flexDirection: 'column',
+  backgroundColor: 'black',
+},
+
+
+}) and style={styles.name-of-choice}
+
+
+/// For EAS branch update
+ eas update --branch development --message "Removed auto location tracking"
+
+
+
+
+// For Bearbone react native project instruction:
+> install: npx create-expo-app 'name of app' --template blank
+> install web viewing incase: npm install react-dom react-native-web
+start viewing and activate web view: npx expo start --web
+> For Navigation: npm install @react-navigation/native @react-navigation/bottom-tabs react-native-screens react-native-safe-area-context
+npm install react-native-gesture-handler react-native-reanimated
+npm install @react-navigation/stack
+
+> For Tailwind or Nativewind: 
+npm install nativewind@2.0.11
+npm install --save-dev tailwindcss@3.3.2 postcss@8.4.23 autoprefixer@10.4.14
+1. tailwind.config.js:/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./App.{js,jsx,ts,tsx}", "./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+2. babel.config.js: 
+module.exports = function(api) {
+  api.cache(true);
+  return {
+    presets: [
+      ['babel-preset-expo']
+    ],
+    plugins: [
+      ["nativewind/babel", { mode: "compileOnly" }]
+    ]
+  };
+};
+
+3. postcss.config.js: 
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+
+// EXample on how to use nativewind: 
+import { Text, View } from 'react-native';
+import { styled } from 'nativewind';
+
+const StyledView = styled(View);
+const StyledText = styled(Text);
+
+export default function App() {
+  return (
+    <StyledView className="flex-1 items-center justify-center bg-white">
+      <StyledText className="text-xl font-bold text-blue-600">
+        Welcome to NativeWind!
+      </StyledText>
+    </StyledView>
+  );
+}

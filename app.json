@@ -1,28 +1,41 @@
 {
   "expo": {
-    "name": "pezstom",
-    "slug": "pezstom",
+    "name": "pezstorm",
+    "slug": "pezstorm",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/cloudy.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/cloudy.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "foregroundImage": "./assets/cloudy.png",
+        "backgroundColor": "#000000"
+      },
+      "package": "com.peacexv.pezstorm",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/cloudy.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "43dc1e0a-3752-451f-9474-dfd1bf9cc0b9"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/43dc1e0a-3752-451f-9474-dfd1bf9cc0b9"
     }
   }
 }
